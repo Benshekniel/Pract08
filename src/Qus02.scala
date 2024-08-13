@@ -1,5 +1,4 @@
 object Multiple {
-  // Lambda function to categorize the number
   val numberDivide: Int => Unit = (number => {
     if (number % 3 == 0) {
       if (number % 5 == 0) {
