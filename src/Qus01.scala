@@ -2,24 +2,21 @@ import scala.io.StdIn._
 
 object CaesarCipher {
 
-  // Function to encrypt the plaintext
   def encrypt(plaintext: String, shift: Int): String = {
     plaintext.map { char =>
       if (char.isLetter) {
         val offset = if (char.isUpper) 'A' else 'a'
-        ((char + shift - offset) % 26 + offset).toChar
+        ((char - offset + shift + 26) % 26 + offset).toChar
       } else {
         char
       }
     }
   }
 
-  // Function to decrypt the ciphertext
   def decrypt(ciphertext: String, shift: Int): String = {
     encrypt(ciphertext, -shift)
   }
 
-  // Cipher function which takes an encryption or decryption function to process the data
   def cipher(text: String, shift: Int, processFunction: (String, Int) => String): String = {
     processFunction(text, shift)
   }

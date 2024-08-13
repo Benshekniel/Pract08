@@ -18,7 +18,7 @@ object Multiple {
   def main(args: Array[String]): Unit = {
     print("Enter the number you want to test: ")
     val num = scala.io.StdIn.readInt()
-    Multiple.numberDivide(num)
+    numberDivide(num)
   }
 }
 
